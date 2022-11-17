@@ -55,7 +55,7 @@ window.addEventListener("DOMContentLoaded", function () {
         slides[slideIndex - 1].style.display = "flex";
     }
 
-    // Animation
+    // Animation Slide
     function fadeRight () {
         let fade = document.querySelectorAll(".fade")
         fade.forEach(item => {
@@ -93,4 +93,19 @@ window.addEventListener("DOMContentLoaded", function () {
             })
         })
     }
+
+    // Animation on hover images
+    let projectImages = document.querySelectorAll(".projectImage");
+
+    projectImages.forEach(projectImage => {
+        projectImage.addEventListener("mouseover", function () {
+            projectImage.style.transform = "scale(2)";
+            projectImage.style.transition = "transform 0.5s";
+        });
+
+        projectImage.addEventListener("mouseout", function () {
+            projectImage.style.transform = "scale(1)";
+            projectImage.style.transition = "transform 0.5s";
+        });
+    });
 })

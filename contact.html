@@ -7,7 +7,7 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="Asset/style/reset.css">
-    <link rel="stylesheet" href="Asset/style/style.css">
+    <link rel="stylesheet" href="Asset/style/contact.css">
     <title>Portfolio Qu&eacute;va William</title>
 </head>
 
@@ -23,20 +23,26 @@
                 <li><a href="https://github.com/Willi2003" target="_blank">GITHUB</a></li>
             </ul>
         </div>
-        <div>
-            <form action="https://formspree.io/f/xgedzgez" method="POST">
-                <label>
-                    Your email:
-                    <input type="email" name="email">
-                </label>
-                <label>
-                    Your message:
-                    <textarea name="message"></textarea>
-                </label>
-                <button type="submit">Send</button>
-            </form>
-        </div>
     </header>
+    <section id="section-contact">
+        <form id="fs-frm" name="Email-form" accept-charset="utf-8" action="https://formspree.io/f/xgedzgez"
+            method="post">
+            <fieldset id="fs-frm-inputs">
+                <label for="full-name">Full Name</label>
+                <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
+                <label for="email-address">Email Address</label>
+                <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
+                <label for="telephone">Telephone Number (Optional)</label>
+                <input type="telephone" name="telephone" id="telephone" placeholder="+33 6 66 66 66 66">
+                <label for="message">Message</label>
+                <textarea rows="6" name="message" id="message"
+                    placeholder="Your message"
+                    required=""></textarea>
+                <input type="hidden" name="_subject" id="email-subject" value="Email Form Submission">
+            </fieldset>
+            <input type="submit" value="Send Email">
+        </form>
+    </section>
 </body>
 
 </html>
