@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@500&display=swap');
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Roboto', sans-serif;
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #020d2c;
+    position: relative;
+
+    header {
+
+        .nav-pages {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            padding: 40px;
+
+            @media (max-width: 768px) {
+                justify-content: center;
+            }
+
+            #homePage-title {
+                @media (max-width: 768px) {
+                    display: none;
+                }
+
+                h1 {
+                    font-size: 50px;
+                }
+            }
+
+            ul {
+                display: flex;
+                gap: 30px;
+                font-family: 'Roboto', sans-serif;
+                font-size: 20px;
+            }
+        }
+
+    }
+
+    #section-presentation {
+        display: flex;
+        justify-content: center;
+        padding: 180px 0 0 0;
+
+        @media (max-width: 1024px) {
+            padding: 50px 0 0 0;
+        }
+
+        .custom-slider {
+            display: none;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap-reverse;
+
+            @media (max-width: 768px) {
+                gap: 40px;
+            }
+
+            .bloc-description-text {
+                width: 50%;
+                font-size: 30px;
+                line-height: 40px;
+                word-spacing: 5px;
+                letter-spacing: 1px;
+
+                @media (max-width: 1024px) {
+                    width: 70%;
+                }
+
+                h2 {
+                    font-size: 40px;
+                    padding: 0 0 20px 0;
+                }
+            }
+
+            .bloc-description-image {
+                background: url(../Image/Photo_CV.jpg) no-repeat center;
+                background-size: cover;
+                width: 400px;
+                height: 400px;
+                border-radius: 50%;
+            }
+
+            .custom-card-link {
+                width: 250px;
+                height: 420px;
+                padding: 40px;
+                background-color: white;
+                border-radius: 20px;
+
+                .custom-card {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 40px;
+
+                    h3 {
+                        font-family: 'Roboto', sans-serif;
+                        font-size: 40px;
+                        text-align: center;
+                        color: black;
+                    }
+
+                    p {
+                        color: black;
+                        line-height: 20px;
+
+                        span {
+                            color: black;
+                        }
+                    }
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .custom-card-link:nth-child(2) {
+
+                .custom-card {
+
+                    span {
+                        color: red;
+                    }
+
+                    img {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+
+        .custom-slider:nth-child(2) {
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 80%;
+        }
+
+        .custom-slider:nth-child(2)>* {
+            flex-basis: 286px;
+        }
+    }
+
+    .prev {
+        position: absolute;
+        top: 500px;
+        left: 50px;
+        font-size: 40px;
+        cursor: pointer;
+    }
+
+    .next {
+        position: absolute;
+        top: 500px;
+        right: 50px;
+        font-size: 40px;
+        cursor: pointer;
+    }
+}
