@@ -42,55 +42,20 @@ body {
 
     }
 
-    #section-presentation {
+    #section-projects {
         display: flex;
         justify-content: center;
-        align-items: center;
+        flex-wrap: wrap;
         gap: 40px;
-        padding: 180px 0 0 0;
+        padding: 160px 0 0 0;
 
-        @media (max-width: 1024px) {
-            flex-direction: column-reverse;
+        @media screen and (max-width: 1024px) {
             padding: 50px 0 0 0;
-        }
-
-        .bloc-description-text {
-            width: 50%;
-            font-size: 30px;
-            line-height: 40px;
-            word-spacing: 5px;
-            letter-spacing: 1px;
-
-            @media (max-width: 1024px) {
-                width: 70%;
-            }
-
-            @media (max-width: 425px) {
-                font-size: 25px;
-            }
-
-            h2 {
-                font-size: 40px;
-                padding: 0 0 20px 0;
-            }
-        }
-
-        .bloc-description-image {
-            background: url(../Image/Photo_CV.jpg) no-repeat center;
-            background-size: cover;
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-
-            @media (max-width: 425px) {
-                width: 300px;
-                height: 300px;
-            }
         }
 
         .custom-card-link {
             width: 250px;
-            height: 420px;
+            height: 450px;
             padding: 40px;
             background-color: white;
             border-radius: 20px;
@@ -146,21 +111,5 @@ body {
         .custom-slider:nth-child(2)>* {
             flex-basis: 286px;
         }
-    }
-
-    .prev {
-        position: absolute;
-        top: 500px;
-        left: 50px;
-        font-size: 40px;
-        cursor: pointer;
-    }
-
-    .next {
-        position: absolute;
-        top: 500px;
-        right: 50px;
-        font-size: 40px;
-        cursor: pointer;
     }
 }

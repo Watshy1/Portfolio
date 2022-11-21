@@ -26,6 +26,8 @@ body header .nav-pages #homePage-title h1 {
 }
 body header .nav-pages ul {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 30px;
   font-family: "Roboto", sans-serif;
   font-size: 20px;
@@ -46,6 +48,21 @@ body #section-contact #fs-frm #fs-frm-inputs {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+@media (max-width: 425px) {
+  body #section-contact #fs-frm #fs-frm-inputs {
+    width: 370px;
+  }
+}
+@media (max-width: 375px) {
+  body #section-contact #fs-frm #fs-frm-inputs {
+    width: 340px;
+  }
+}
+@media (max-width: 320px) {
+  body #section-contact #fs-frm #fs-frm-inputs {
+    width: 270px;
+  }
 }
 body #section-contact #fs-frm #fs-frm-inputs input[type=text], body #section-contact #fs-frm #fs-frm-inputs input[type=email], body #section-contact #fs-frm #fs-frm-inputs input[type=telephone] {
   width: 96%;

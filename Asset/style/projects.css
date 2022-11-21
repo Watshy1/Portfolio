@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@500&display=swap");
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #020d2c;
+  position: relative;
+}
+body header .nav-pages {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 40px;
+}
+@media (max-width: 768px) {
+  body header .nav-pages {
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  body header .nav-pages #homePage-title {
+    display: none;
+  }
+}
+body header .nav-pages #homePage-title h1 {
+  font-size: 50px;
+}
+body header .nav-pages ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+body #section-projects {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 160px 0 0 0;
+}
+@media screen and (max-width: 1024px) {
+  body #section-projects {
+    padding: 50px 0 0 0;
+  }
+}
+body #section-projects .custom-card-link {
+  width: 250px;
+  height: 450px;
+  padding: 40px;
+  background-color: white;
+  border-radius: 20px;
+}
+body #section-projects .custom-card-link .custom-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+body #section-projects .custom-card-link .custom-card h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 40px;
+  text-align: center;
+  color: black;
+}
+body #section-projects .custom-card-link .custom-card p {
+  color: black;
+  line-height: 20px;
+}
+body #section-projects .custom-card-link .custom-card p span {
+  color: black;
+}
+body #section-projects .custom-card-link .custom-card img {
+  width: 100%;
+}
+body #section-projects .custom-card-link:nth-child(2) .custom-card span {
+  color: red;
+}
+body #section-projects .custom-card-link:nth-child(2) .custom-card img {
+  width: 80%;
+}
+body #section-projects .custom-slider:nth-child(2) {
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 80%;
+}
+body #section-projects .custom-slider:nth-child(2) > * {
+  flex-basis: 286px;
+}
+
+/*# sourceMappingURL=projects.css.map */
