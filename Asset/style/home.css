@@ -66,6 +66,10 @@ body #section-presentation .bloc-description-text h2 {
   font-size: 40px;
   padding: 0 0 20px 0;
 }
+body #section-presentation .bloc-description-text p a {
+  color: blue;
+  text-decoration: underline;
+}
 body #section-presentation .bloc-description-image {
   background: url(../Image/Photo_CV.jpg) no-repeat center;
   background-size: cover;
