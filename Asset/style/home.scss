@@ -77,7 +77,10 @@ body {
             p {
 
                 a {
-                    color: blue;
+                    color: red;
+                }
+
+                a:hover {
                     text-decoration: underline;
                 }
             }

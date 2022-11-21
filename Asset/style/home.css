@@ -67,7 +67,9 @@ body #section-presentation .bloc-description-text h2 {
   padding: 0 0 20px 0;
 }
 body #section-presentation .bloc-description-text p a {
-  color: blue;
+  color: red;
+}
+body #section-presentation .bloc-description-text p a:hover {
   text-decoration: underline;
 }
 body #section-presentation .bloc-description-image {
