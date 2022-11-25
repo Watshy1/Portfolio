@@ -1,0 +1,56 @@
+---
+
+# After running this playbook on a new machine, you'll need either to:
+# - Rsync /var/www/pycon/fr/ from another server or a backup.
+# - Redeploy every sites (to run pelican / frozen-flask / ...).
+
+- hosts: webservers
+  vars:
+    nginx_public_deploy_key: |
+        ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPBKDXwWULKlSdklj9yLRnW1LDM8SYDDpXUmxMcMbJYo admin@MacBook-Pro-de-William.local
+  tasks:
+    - name: Basic setup
+      include_role: name=common
+
+    - name: Setup PyConFr
+      include_role: name=nginx
+      vars:
+        nginx_owner: pyconfr
+        nginx_domain: pycon.fr
+        nginx_certificates: ['pycon.fr', 'www.pycon.fr']
+        nginx_path: /var/www/pycon.fr/
+        nginx_conf: |
+          server
+          {
+              listen [::]:80; listen 80;
+              server_name .pycon.fr;
+              access_log /var/log/nginx/pycon.fr-access.log;
+              error_log /var/log/nginx/pycon.fr-error.log;
+              return 301 https://www.pycon.fr$request_uri;
+          }
+
+          server
+          {
+              listen [::]:443 ssl; listen 443 ssl;
+              server_name pycon.fr;
+              access_log /var/log/nginx/pycon.fr-access.log;
+              error_log /var/log/nginx/pycon.fr-error.log;
+              include snippets/letsencrypt-pycon.fr.conf;
+              return 301 https://www.pycon.fr$request_uri;
+          }
+
+          server
+          {
+              listen [::]:443 ssl; listen 443 ssl;
+              server_name www.pycon.fr;
+              access_log /var/log/nginx/pycon.fr-access.log;
+              error_log /var/log/nginx/pycon.fr-error.log;
+              include snippets/letsencrypt-pycon.fr.conf;
+              root /var/www/pycon.fr/;
+              charset utf-8;
+              location = / {
+                  return 302 https://www.pycon.fr/2023$request_uri;
+              }
+              rewrite ^/2018/$ /2018/fr/index/ last;
+              rewrite ^/2018/(A-Za-z-)+/$ /2018/fr/$1/ last;
+          }          

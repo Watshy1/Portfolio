@@ -1,0 +1,7 @@
+---
+ansible_python_interpreter: "/usr/bin/python3"
+ansible_user: root
+admins:
+    - watshy
+ 
+root_authorized_keys: "{{ admins | map('extract', authorized_keys)|flatten|join('\n') }}"
