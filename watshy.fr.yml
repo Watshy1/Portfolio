@@ -15,7 +15,6 @@
         nginx_conf: |
             server {
                 listen 443 ssl;
-
                 ssl_certificate /etc/letsencrypt/live/watshy.fr/fullchain.pem; # managed by Certbot
                 ssl_certificate_key /etc/letsencrypt/live/watshy.fr/privkey.pem; # managed by Certbot
                 include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
@@ -37,6 +36,7 @@
                 location / {
                     root /home/github/Portfolio;
                 }
+
             }
 
             server {
@@ -50,16 +50,8 @@
             }
 
             server {
-                if ($host = watshy.fr) {
-                    return 301 https://$host$request_uri;
-                } # managed by Certbot
-
-                if ($host = restaurants.watshy.fr) {
-                    return 301 https://$host$request_uri;
-                } # managed by Certbot
-
                 listen 80 ;
                 listen [::]:80 ;
-                server_name watshy.fr restaurants.watshy.fr;
-                return 404; # managed by Certbot
+                server_name _;
+                return 301 https://$host$request_uri;
             }
