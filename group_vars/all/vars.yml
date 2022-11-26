@@ -1,5 +1,0 @@
----
-admins:
-    - watshy
- 
-root_authorized_keys: "{{ admins | map('extract', authorized_keys)|flatten|join('\n') }}"

@@ -1,4 +1,0 @@
----
-authorized_keys:
-    watshy:
-        - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPBKDXwWULKlSdklj9yLRnW1LDM8SYDDpXUmxMcMbJYo admin@MacBook-Pro-de-William.local

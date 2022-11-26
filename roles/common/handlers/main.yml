@@ -1,7 +1,0 @@
----
-
-- name: reload nftables
-  service: name=nftables state=reloaded
-
-- name: restart sshd
-  service: name=sshd state=restarted
